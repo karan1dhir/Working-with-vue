@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src = "script.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <!-- <h1>{{title}}</h1>
+        <button v-on:click = "titleUpperCase">Change title</button>
+        <button @click = "titlelowerCase">LowerCase</button>
+        <input v-model ="username">
+        <p> Hello {{username}}</p> -->
+       <h1>TodoList</h1>
+       <input v-model = "newTask">
+       <button @click = "addTask">Add</button>
+       <ul>
+           <li v-for = "task in taskList">{{task.name}}</li>
+       </ul>
+    </div>
+</body>
+</html>
