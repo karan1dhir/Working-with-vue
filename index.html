@@ -7,6 +7,12 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src = "script.js"></script>
+    <style>
+      .done{
+          text-decoration: line-through;
+          color: gray;
+      }
+    </style>
 </head>
 <body>
     <div id = "app">
@@ -19,7 +25,12 @@
        <input v-model = "newTask">
        <button @click = "addTask">Add</button>
        <ul>
-           <li v-for = "task in taskList">{{task.name}}</li>
+           <li v-for = "task in taskList">
+           <!-- <strike v-if = "task.done">{{task.name}}</strike>
+           <span v-else>{{task.name}}</span> -->
+           <span :class = "{done: task.done}">{{task.name}}</span>
+           <input  v-model = "task.done" type="checkbox">
+           </li>
        </ul>
     </div>
 </body>
